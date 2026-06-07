@@ -23,6 +23,10 @@ app.use(
  })
 );
 
+app.use((req, res, next) => {
+  console.log("REQUEST:", req.method, req.originalUrl);
+  next();
+});
 
 const limiter= rateLimit({
     windowMs: 15*60*1000,
@@ -35,7 +39,7 @@ app.use(express.json());
 
 app.use("/logs",analyze);
 app.use("/logs",saveMetrics);
-app.get("/health",(_,res)=>{
+app.get("/health",(req,res)=>{
     res.send("Server running");
 })
 
@@ -53,6 +57,8 @@ app.use((err: any, req: any, res: any, next: any) => {
     error: err.message || "Internal Server Error",
   });
 });
+
+console.log("PORT =", process.env.PORT);
 
 app.listen(process.env.PORT || 8001,()=>
 {
