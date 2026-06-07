@@ -1,0 +1,75 @@
+
+> lecture_1_express_routing@1.0.0 test
+> jest "--forceExit" "--json" "--no-color" "--outputFile=jest-log.json"
+
+FAIL __test__/data.test.js
+  POST /users
+    ✕ creates a new user account (68 ms)
+    ✓ fetches a list of all user accounts (11 ms)
+    ✕ fetches a single user account by its ID (3 ms)
+    ✕ updates a user account (3 ms)
+    ✕ deletes a user account (2 ms)
+
+  ● POST /users › creates a new user account
+
+    Account Creation Failed
+
+      28 |       expect(response.body).toMatchObject(userData);
+      29 |     } catch (error) {
+    > 30 |       throw new Error("Account Creation Failed");
+         |             ^
+      31 |     }
+      32 |   });
+      33 |
+
+      at Object.<anonymous> (__test__/data.test.js:30:13)
+
+  ● POST /users › fetches a single user account by its ID
+
+    Fetching single user account by ID failed
+
+      58 |       });
+      59 |     } catch (error) {
+    > 60 |       throw new Error("Fetching single user account by ID failed");
+         |             ^
+      61 |     }
+      62 |   });
+      63 |
+
+      at Object.<anonymous> (__test__/data.test.js:60:13)
+
+  ● POST /users › updates a user account
+
+    Updating a user account failed
+
+      85 |       expect(response.body).toMatchObject(updatedUserData);
+      86 |     } catch (error) {
+    > 87 |       throw new Error("Updating a user account failed");
+         |             ^
+      88 |     }
+      89 |   });
+      90 |
+
+      at Object.<anonymous> (__test__/data.test.js:87:13)
+
+  ● POST /users › deletes a user account
+
+    Deleting a user account failed
+
+      105 |       expect(deletedUser).toBeNull();
+      106 |     } catch (error) {
+    > 107 |       throw new Error("Deleting a user account failed");
+          |             ^
+      108 |     }
+      109 |   });
+      110 | });
+
+      at Object.<anonymous> (__test__/data.test.js:107:13)
+
+Test Suites: 1 failed, 1 total
+Tests:       4 failed, 1 passed, 5 total
+Snapshots:   0 total
+Time:        1.005 s, estimated 4 s
+Ran all test suites.
+Test results written to: jest-log.json
+Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?
