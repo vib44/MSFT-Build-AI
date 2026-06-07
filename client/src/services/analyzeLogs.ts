@@ -16,7 +16,7 @@ const findAnalysis = async (values: string): Promise<AnalysisResult> => {
         const res = await api.post<AnalysisResult>("logs/analyze", { logs: values });
         return res.data;
     } catch(error) {
-        console.log("Error analyzing logs");
+        console.log("Error analyzing logs",error);
         throw error;
     }
 }
