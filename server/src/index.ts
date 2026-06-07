@@ -58,9 +58,7 @@ app.use((err: any, req: any, res: any, next: any) => {
   });
 });
 
-console.log("PORT =", process.env.PORT);
-
-app.listen(process.env.PORT || 8001,()=>
+app.listen(process.env.PORT || 8080,()=>
 {
     console.log("Server started...")
 })
