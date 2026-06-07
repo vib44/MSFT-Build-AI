@@ -3,7 +3,7 @@
  
   "compilerOptions": {
     // File Layout
-     "rootDir": "./server",
+     "rootDir": "./app",
      "outDir": "./dist",
 
     // Environment Settings
