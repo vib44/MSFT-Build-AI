@@ -18,8 +18,8 @@ router.post("/analyze",async (req,res)=>
         const result= await analyzeLogs(req.body.logs);
         res.status(200).json(result);
     } catch (error) {
-        res.status(401).json("Cant analyze logs");
-    }
+        res.status(401).json({message:`Cant analyze logs ${error}`})
+          }
 })
 
 
@@ -32,7 +32,7 @@ router.post("/upload",upload.single("upload_file"),async (req, res) => {
     res.status(200).json({file: req.file, content: content});
     }
     catch(error)
-        {res.status(404).json("Unable to upload file");}
+        {res.status(404).json({message: `Unable to upload file ${error})`})}
     finally {
       if (filePath) {
         try {
