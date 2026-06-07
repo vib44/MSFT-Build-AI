@@ -1,12 +1,9 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
- "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js"
-  },
+ 
   "compilerOptions": {
     // File Layout
-     "rootDir": "./src",
+     "rootDir": "./server",
      "outDir": "./dist",
 
     // Environment Settings
