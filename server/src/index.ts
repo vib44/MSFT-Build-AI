@@ -18,9 +18,8 @@ dotenv.config();
 connectDb();
 app.use(
  cors({
-   origin: process.env.CLIENT_URL,
-   methods: ["GET", "POST"],
-   allowedHeaders: ["Content-Type"],
+   origin: true,
+   credentials: true
  })
 );
 
