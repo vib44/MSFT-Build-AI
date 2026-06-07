@@ -16,7 +16,13 @@ const clientBuildPath = path.resolve(
 const app=express();
 dotenv.config();
 connectDb();
-app.use(cors());
+app.use(
+ cors({
+   origin: process.env.CLIENT_URL,
+   methods: ["GET", "POST"],
+   allowedHeaders: ["Content-Type"],
+ })
+);
 
 const limiter= rateLimit({
     windowMs: 15*60*1000,

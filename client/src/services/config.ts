@@ -1,1 +1,1 @@
-export const API_BASE_URL="https://rootcauseaibackend-3ihy8w4j9-vib44s-projects.vercel.app/"
+export const API_BASE_URL="https://rootcauseaibackend.vercel.app/"
