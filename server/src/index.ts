@@ -15,7 +15,7 @@ const clientBuildPath = path.resolve(
 
 const app=express();
 dotenv.config();
-connectDb();
+await connectDb();
 app.use(
  cors({
    origin: true,
@@ -43,11 +43,11 @@ app.get("/health",(req,res)=>{
     res.send("Server running");
 })
 
-app.use(express.static(clientBuildPath));
+// app.use(express.static(clientBuildPath));
 
-app.use((req, res) => {
+/** app.use((req, res) => {
   res.sendFile(path.join(clientBuildPath, "index.html"));
-});
+});*/
 
 
 app.use((err: any, req: any, res: any, next: any) => {
@@ -58,7 +58,7 @@ app.use((err: any, req: any, res: any, next: any) => {
   });
 });
 
-app.listen(process.env.PORT || 8080,()=>
+app.listen(process.env.PORT || 8001,()=>
 {
     console.log("Server started...")
 })
